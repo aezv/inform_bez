@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    padding-left: 2vw;
+    padding-top: 2vh;
+    height: 10vh;
+}
+
+#main {
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 96vw;
+    height: 60vh;
+}
+
+#key_text_container {
+    margin: 0;
+    padding: 0;
+    width: 85vw;
+    height: 60vh;
+}
+
+#key {
+    margin: 0;
+    padding: 0;
+    padding-left: 3%;
+    padding-right: 3%;
+    resize: none;
+    width: 94%;
+    height: 10%;
+}
+
+#text {
+    margin: 0;
+    padding: 0;
+    padding-left: 3%;
+    padding-right: 3%;
+    resize: none;
+    width: 94%;
+    height: 90%;
+}
+
+#button_start {
+    margin: 0;
+    padding: 0;
+    width: 10vw;
+    height: 60vh;
+}
+
+#info {
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: 95vw;
+    height: 25vh;
+}
