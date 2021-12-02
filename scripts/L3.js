@@ -40,13 +40,15 @@ button_start.addEventListener('click', function () {
 
 button_key_gen.addEventListener('click', function () {
     let data_text = text.value.toUpperCase().split('');
-    let multiples = 1;
+    let multiples_array = new Array();
     for (let i = 2; i <= data_text.length; i++) {
         if (data_text.length % i == 0) {
-            multiples = i;
-            break;
+            multiples_array.push(i);
         }
+        if (50 <= i)
+            break;
     }
+    let multiples = multiples_array[Math.floor(Math.random() * multiples_array.length)];
     let data_key_gen = new Array();
     for (let i = 0; i < multiples; i++)
         data_key_gen.push(i);
