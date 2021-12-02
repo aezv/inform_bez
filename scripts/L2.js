@@ -1,6 +1,8 @@
 let key = document.getElementById('key');
 let text = document.getElementById('text');
+let button_key_gen = document.getElementById('button_key_gen');
 let button_start = document.getElementById('button_start');
+let button_clear = document.getElementById('button_clear');
 let count_symbols = document.getElementById('count_symbols');
 let count_letters = document.getElementById('count_letters');
 let match_index = document.getElementById('match_index');
@@ -56,4 +58,31 @@ button_start.addEventListener('click', function () {
     }
     else
         key.value = 'Ключ должен состоять из ' + alph.length + ' символов!';
+});
+
+button_key_gen.addEventListener('click', function () {
+    let data_key_gen = alph.slice();
+    data_key_gen.sort(() => Math.random() - 0.5);
+
+    let temp_copy_input = document.createElement('input');
+    document.body.appendChild(temp_copy_input);
+    temp_copy_input.value = data_key_gen.join('');
+    temp_copy_input.select();
+    document.execCommand('copy');
+    document.body.removeChild(temp_copy_input);
+
+    button_key_gen.innerText = 'Скопировано';
+    setTimeout(function () {
+        button_key_gen.innerText = 'Генератор ключа';
+    }, 1000);
+});
+
+button_clear.addEventListener('click', function(){
+    key.value='';
+    text.value='';
+    count_symbols.innerText = '';
+    count_letters.innerText = '';
+    match_index.innerText = '';
+    key_table.innerHTML = '';
+    count_iteration_letters_table.innerHTML = '';
 });
