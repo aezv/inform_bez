@@ -124,18 +124,7 @@ button_start_decrypt.addEventListener('click', function () {
 button_key_gen.addEventListener('click', function () {
     let data_key_gen = alph.slice();
     data_key_gen.sort(() => Math.random() - 0.5);
-
-    let temp_copy_input = document.createElement('input');
-    document.body.appendChild(temp_copy_input);
-    temp_copy_input.value = data_key_gen.join('');
-    temp_copy_input.select();
-    document.execCommand('copy');
-    document.body.removeChild(temp_copy_input);
-
-    button_key_gen.innerText = 'Скопировано';
-    setTimeout(function () {
-        button_key_gen.innerText = 'Генератор ключа';
-    }, 1000);
+    key.value = data_key_gen.join('');
 });
 
 button_clear.addEventListener('click', function () {
