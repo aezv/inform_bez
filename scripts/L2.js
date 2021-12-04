@@ -1,3 +1,4 @@
+let button_help = document.getElementById('button_help');
 let key = document.getElementById('key');
 let text = document.getElementById('text');
 let button_key_gen = document.getElementById('button_key_gen');
@@ -10,6 +11,14 @@ let match_index = document.getElementById('match_index');
 let key_table = document.getElementById('key_table');
 let count_iteration_letters_table = document.getElementById('count_iteration_letters_table');
 const alph = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'.split('');
+button_help.addEventListener('click', function () {
+    key.value = 'Это поле для ввода ключа. Ключ не должен содержать пробелы или другие символы, отличные от русского алфавита.';
+    text.value = 'Это поле для ввода текста.\n' +
+        'Кнопка \"Генератор ключа\" создает ключ, получаемый случайным перемешиванием букв русского алфавита.\n' +
+        'Кнопка \"Зашифровать\" шифрует текст и выводит некоторую статистику.\n' +
+        'Кнопка \"Расшифровать\" расшифровывает текст и выводит некоторую статистику.\n' +
+        'Кнопка \"Очистить\" очищает все доступные поля.';
+});
 button_start_encrypt.addEventListener('click', function () {
     let data_key = key.value.toUpperCase().split('');
     if (data_key.length == alph.length) {

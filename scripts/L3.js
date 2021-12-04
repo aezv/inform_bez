@@ -1,3 +1,4 @@
+let button_help = document.getElementById('button_help');
 let key = document.getElementById('key');
 let text = document.getElementById('text');
 let button_key_gen = document.getElementById('button_key_gen');
@@ -7,6 +8,14 @@ let button_clear = document.getElementById('button_clear');
 let count_symbols = document.getElementById('count_symbols');
 let edit_count_symbols = document.getElementById('edit_count_symbols');
 let key_table = document.getElementById('key_table');
+button_help.addEventListener('click', function () {
+    key.value = 'Это поле для ввода ключа. Элементы ключа должны быть разделены пробелом.';
+    text.value = 'Это поле для ввода текста.\n' +
+        'Кнопка \"Генератор ключа\" создает ключ, получаемый случайным перемешиванием элементов последовательности 0, ..., n.\n' +
+        'Кнопка \"Зашифровать\" шифрует текст и выводит некоторую статистику.\n' +
+        'Кнопка \"Расшифровать\" расшифровывает текст и выводит некоторую статистику.\n' +
+        'Кнопка \"Очистить\" очищает все доступные поля.';
+});
 button_start_encrypt.addEventListener('click', function () {
     let data_key = key.value.split(' ');
     let data_text = text.value.toUpperCase().split('');
@@ -44,7 +53,7 @@ button_start_encrypt.addEventListener('click', function () {
     }
 });
 
-button_start_decrypt.addEventListener('click', function(){
+button_start_decrypt.addEventListener('click', function () {
     let data_key = key.value.split(' ');
     let data_text = text.value.toUpperCase().split('');
     let data_count_symbols = data_text.length;
